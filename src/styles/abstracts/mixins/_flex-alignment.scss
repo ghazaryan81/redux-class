@@ -1,0 +1,30 @@
+@mixin flex-center-x($display: flex) {
+ display: $display;
+ justify-content: center;
+}
+
+@mixin flex-center-y($display: flex) {
+ display: $display;
+ align-items: center;
+}
+
+@mixin flex-center($display: flex) {
+ display: $display;
+ justify-content: center;
+ align-items: center;
+}
+
+@mixin flex-between($display: flex) {
+ display: $display;
+ justify-content: space-between;
+}
+
+@mixin flex-end-x($display: flex) {
+ display: $display;
+ justify-content: flex-end;
+}
+
+@mixin revers-center() {
+ flex-direction: column;
+ align-items: center;
+}

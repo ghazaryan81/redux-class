@@ -1,0 +1,109 @@
+@use "sass:map";
+@use "sass:string";
+@use "sass:meta";
+@use "sass:list";
+
+@use "@/styles/abstracts/functions" as *;
+@use "@/styles/abstracts/variables" as *;
+
+@use "@/styles/components/atoms/fix-section";
+@use "@/styles/components/atoms/logo";
+@use "@/styles/components/atoms/box/vars" as box;
+@use "@/styles/components/atoms/btn/vars" as btn;
+
+:root {
+ --font-family-root: Krub, sans-serif;
+ --font-family-headline: Rubik, sans-serif;
+ @each $item, $val in logo.$logo {
+  --logo-#{$item}: #{$val};
+ }
+
+ @each $item, $val in box.$box {
+  --box-#{$item}: #{$val};
+ }
+
+ @each $item, $val in btn.$btn {
+  @if list.length($val) == 1 {
+   @debug "@debug 1";
+  }
+
+  @if list.length($val) == 2 {
+   @debug "@debug 2";
+   // @debug $val;
+   // @debug list.nth($val, 1);
+   // @debug list.nth(list.nth(list.nth($val, 1), 1), 2);
+   // @debug list.nth(list.nth($val, 1), 1);
+   // @debug --btn--#{$item}--top-max, list.nth(list.nth(list.nth($val, 1), 1), 2);
+   // @debug --btn--#{$item}--bottom-max, list.nth(list.nth(list.nth($val, 1), 1), 2);
+   // @debug --btn--#{$item}--left-max, list.nth(list.nth(list.nth($val, 1), 1), 2);
+   // @debug --btn--#{$item}--bottom-max, list.nth(list.nth(list.nth($val, 1), 1), 2);
+  }
+
+  @if list.length($val) == 3 {
+   @debug "@debug 3";
+  }
+
+  @if list.length($val) == 4 {
+   @debug "@debug 4";
+  }
+ }
+
+ @each $item, $val in fix-section.$fix-section {
+  --fix-section-#{$item}: #{$val};
+ }
+
+ @each $item, $val in $lw {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $bp {
+  --#{$item}: #{$val};
+ }
+
+ // prettier-ignore
+ @each $item, $val in $color {
+  --#{$item}: #{$val};
+  --#{$item}-clean: #{str-replace(str-replace(str-replace(#{$val}, "rgb", ""), ")", ""), "(", "")};
+ }
+
+ @each $item, $val in $font-size {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $line-height {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $letter-spacing {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $font-weight {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $border-radius {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $animation-timing-function {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $animation-duration {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $gradient {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $opacity {
+  --#{$item}: #{$val};
+ }
+
+ @each $item, $val in $global {
+  --#{$item}: #{$val};
+ }
+ font-size: var(--global-font-size-reduce);
+}

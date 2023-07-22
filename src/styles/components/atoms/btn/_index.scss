@@ -1,0 +1,55 @@
+@use "sass:map";
+
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/functions" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+@use "./vars" as *;
+
+.btn {
+ @each $item, $val in $btn {
+  &--#{$item} {
+   text-decoration: none;
+  }
+ }
+
+ &--size-1 {
+  // text-decoration: none;
+  // padding-top: var(--btn--size-1-pad--top);
+ }
+
+ &--size-2 {
+  text-decoration: none;
+ }
+
+ &--white {
+  text-decoration: none;
+ }
+
+ &--grey {
+  text-decoration: none;
+ }
+
+ &--brand-1-flat {
+  text-decoration: none;
+ }
+
+ &--brand-2-flat {
+  text-decoration: none;
+ }
+
+ &--brand-2-gradient {
+  text-decoration: none;
+ }
+
+ // @each $item, $val in $btn {
+ //  &--#{$item} {
+ //   @each $sub-item, $sub-item-val in $val {
+ //    // --btn--#{$item}--#{$sub-item}: #{$sub-item-val};
+ //    @debug $sub-item, $sub-item-val;
+ //    padding-top: clamp(--btn--#{$item}--#{$sub-item}, $sub-item-val, --btn--#{$item}--#{$sub-item})
+ //   }
+ //  }
+ // }
+ // text-decoration: none;
+} // .btn

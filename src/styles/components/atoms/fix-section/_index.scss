@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "@/styles/abstracts" as *;
+
+$fix-section: (
+ max-width: map.get($lw, "w-xl-1000"),
+);
+
+@mixin fix-section() {
+ .fix-section {
+  @include mx(auto);
+  max-width: var(--fix-section-max-width);
+ } // .section-fix
+}

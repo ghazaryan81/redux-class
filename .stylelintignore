@@ -1,0 +1,3 @@
+src/styles/abstracts/_variables.scss
+src/styles/vendors/_font-face-generator.scss
+src/styles/abstracts/functions/_str-replace.scss

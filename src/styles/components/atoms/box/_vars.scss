@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "@/styles/abstracts/variables" as *;
+
+// prettier-ignore
+$box: (
+ sm--max-width: 4.354rem,
+ sm--min-width: 2.3rem,
+ //
+ md--max-width: 6.3rem,
+ md--min-width: 4.3rem,
+ //
+ lg--max-width: 7.285rem,
+ lg--min-width: 5.285rem,
+ //
+ trans-ease:                       map.get($atf,      "ease-100"),
+ trans-duration:                   map.get($ad,       "duration-200"),
+ b1f--color:                       map.get($color,    "yellow-200"),
+ //
+ b1f--after--border-color:         map.get($color,    "yellow-200"),
+ b1f--after--bg-color:             map.get($color,    "blue-300"),
+ //
+ b1f--hover--bg-color:             map.get($gradient, "gradient-yellow-300"),
+ b1f--hover--hover--color:         map.get($color,    "black-600"),
+ //
+ b2g--color:                       map.get($color,    "black-600"),
+ b2g--after--bg-color:             map.get($gradient, "gradient-yellow-300"),
+ //
+ b2g--hover--before--border-color: map.get($color,    "black-500"),
+ b2g--hover--before--bg-color:     map.get($color,    "blue-300"),
+ b2g--hover--hover--color:         map.get($color,    "yellow-200"),
+);

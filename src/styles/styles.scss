@@ -1,0 +1,42 @@
+/* stylelint-disable no-duplicate-selectors */
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "sass:string";
+@use "sass:meta";
+
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/functions" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+@use "@/styles/base" as *;
+
+@use "@/styles/components/atoms/box" as *;
+@use "@/styles/components/atoms/btn" as *;
+
+body {
+ font-family: var(--font-family-root);
+ font-size: var(--fs-140);
+ color: var(--white-100);
+ background-color: var(--white-100);
+} // body
+
+a,
+body {
+ font-family: var(--font-family-root);
+} // body
+
+.wrapper {
+ min-height: 2000px;
+} // .wrapper
+
+.container-fix {
+ @include mx(auto);
+ @include px(3rem);
+ width: 100%;
+ max-width: var(--w-xl-1000);
+} // .container-fix
+
+.flex-between {
+ @include flex-between;
+}

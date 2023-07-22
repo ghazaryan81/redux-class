@@ -1,0 +1,102 @@
+{
+ "name": "redux-class",
+ "version": "0.1.0",
+ "private": true,
+ "main": "src/index.tsx",
+ "description": "redux class",
+ "author": "Hayk Ghazaryan <hovhannesi.hayk.ghazaryan.81@gmail.com> (https://github.com/ghazaryan81/redux-class.git)",
+ "keywords": [
+  "redux-class"
+ ],
+ "repository": {
+  "type": "git",
+  "url": "git+ssh@github.com:ghazaryan81/redux-class.git"
+ },
+ "bugs": {
+  "url": "https://github.com/ghazaryan81/redux-class/issues/",
+  "email": "hovhannesi.hayk.ghazaryan.81@gmail.com"
+ },
+ "scripts": {
+  "start": "nodemon --watch config/overrides.js --watch package.json --exec concurrently \"npm run killport\" \"npm run react-scripts:start\"",
+  "react-scripts:start": "react-app-rewired start -- --reset-cache",
+  "build": "react-app-rewired build -- --reset-cache",
+  "test": "react-app-rewired test -- --reset-cache",
+  "eject": "react-scripts eject",
+  "c___________________stylelint_______________________": "",
+  "stylelint": "stylelint 'src/styles/**/*{.css,.scss,.sass}'",
+  "stylelint:fix": "npm run stylelint -- --fix",
+  "c___________________prettier_______________________": "",
+  "prettier": "prettier --config \".prettierrc\" --check \"src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+  "prettier:fix": "npm run prettier -- --write",
+  "c___________________json-server_______________________": "",
+  "data1": "npx json-server -w ./src/data/menu.json -p 4001",
+  "data2": "npx json-server -w ./src/data/todo.json -p 4002",
+  "killport": "kill-port --port 4001,4002,3000",
+  "prepare": "husky install"
+ },
+ "config-overrides-path": "config/overrides.js",
+ "eslintConfig": {
+  "extends": [
+   "react-app",
+   "react-app/jest"
+  ]
+ },
+ "browserslist": {
+  "production": [
+   ">0.2%",
+   "not dead",
+   "not op_mini all"
+  ],
+  "development": [
+   "last 1 chrome version",
+   "last 1 firefox version",
+   "last 1 safari version"
+  ]
+ },
+ "dependencies": {
+  "@testing-library/jest-dom": "^5.17.0",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "@types/jest": "^27.5.2",
+  "@types/node": "^16.18.38",
+  "@types/react": "^18.2.15",
+  "@types/react-dom": "^18.2.7",
+  "concurrently": "^8.2.0",
+  "json-server": "^0.17.3",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-redux": "^8.1.1",
+  "react-router-dom": "^6.14.2",
+  "react-scripts": "5.0.1",
+  "redux": "^4.2.1",
+  "redux-thunk": "^2.4.2",
+  "sass": "^1.64.0",
+  "sass-svg-uri": "^2.0.0",
+  "typescript": "^4.9.5",
+  "web-vitals": "^2.1.4"
+ },
+ "devDependencies": {
+  "husky": "^8.0.3",
+  "lint-staged": "^13.2.3",
+  "nodemon": "^3.0.1",
+  "postcss": "^8.4.27",
+  "prettier": "^3.0.0",
+  "react-app-rewired": "^2.2.1",
+  "redux-devtools-extension": "^2.13.9",
+  "sass-lint-auto-fix": "^0.21.2",
+  "stylelint": "^15.10.2",
+  "stylelint-config-rational-order": "^0.1.2",
+  "stylelint-config-recommended-scss": "^12.0.0",
+  "stylelint-order": "^6.0.3",
+  "stylelint-prettier": "^4.0.0",
+  "stylelint-scss": "^5.0.1"
+ },
+ "lint-staged": {
+  "src/styles/**/*.{css,scss}": [
+   "npm run stylelint:fix"
+  ],
+  "src/**/*.{js,jsx,ts,tsx,css,scss}": [
+   "npm run prettier:fix"
+  ]
+ }
+}

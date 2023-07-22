@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/functions" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+$logo: (
+ max-width: 21rem,
+ min-width: 17rem,
+);
+
+@mixin logo() {
+ .logo {
+  &__img {
+   display: block;
+   max-width: clamp(var(--logo-min-width), vw(map.get($logo, "max-width")), var(--logo-max-width));
+  }
+ }
+}
